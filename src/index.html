@@ -1,59 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <title>Landing de Ciberseguridad</title>
+  <style>
+    /* ========================
+       Dark Mode Cybersecurity Theme
+       ======================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+      background: #000;
+      color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: #0f0;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #0f0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a:hover {
+      color: #0ff;
+    }
+
+    /* Hero section with matrix/terminal text effect */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #011627 0%, #000 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .matrix-text {
+      font-family: 'Courier New', monospace;
+      font-size: 3rem;
+      color: #0f0;
+      position: relative;
+    }
+
+    .matrix-text::after {
+      content: attr(data-text);
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink {
+      from,
+      to {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .hero .subtitle {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      color: #8f8;
+    }
+
+    /* Services grid */
+    .services {
+      padding: 4rem 2rem;
+      background: #010203;
+      margin-top: 80px;
+    }
+
+    .services h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #0f0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: #021124;
+      border: 1px solid #0f0;
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px #0f0;
+    }
+
+    .card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    /* News section */
+    .news {
+      padding: 4rem 2rem;
+      background: #000;
+    }
+
+    .news h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #0f0;
+    }
+
+    .news ul {
+      list-style: none;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .news li {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #0f0;
+      padding-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #010101;
+      color: #666;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .matrix-text {
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <header>
-    <nav class="navbar">
-      <span class="logo">Mi Sitio Brillante</span>
+    <div class="navbar">
+      <span class="logo">CyberSecure</span>
       <ul class="nav-links">
         <li><a href="#home">Inicio</a></li>
-        <li><a href="#about">Acerca de</a></li>
-        <li><a href="#features">Características</a></li>
-        <li><a href="#contact">Contacto</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#news">Noticias</a></li>
       </ul>
-    </nav>
+    </div>
   </header>
 
   <section id="home" class="hero">
-    <h1 class="title">¡Hola Mundo!</h1>
-    <p class="subtitle">Sumérgete en una experiencia visual extraordinaria</p>
-    <div class="button-group">
-      <button class="primary-button">Empieza ahora</button>
-      <button class="secondary-button">Más información</button>
+    <div class="matrix-text" data-text="$$$$ $ HACK the planet! "> </div>
+    <p class="subtitle">Protegiendo tu mundo digital</p>
+  </section>
+
+  <section id="services" class="services">
+    <h2>Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="icon">🛡️</span>
+        <h3>Pentesting</h3>
+      </div>
+      <div class="card">
+        <span class="icon">📋</span>
+        <h3>Auditoría</h3>
+      </div>
+      <div class="card">
+        <span class="icon">🔒</span>
+        <h3>Protección de Datos</h3>
+      </div>
     </div>
   </section>
 
-  <section id="about" class="info-section">
-    <h2>¿Quiénes somos?</h2>
-    <p>Somos un equipo apasionado por crear interfaces web vibrantes y dinámicas. Nuestra misión es hacer que cada visita sea inolvidable.</p>
-    <button class="cta-button">Únete a nosotros</button>
-  </section>
-
-  <section id="features" class="features">
-    <h2>Características destacadas</h2>
+  <section id="news" class="news">
+    <h2>Últimas amenazas</h2>
     <ul>
-      <li>Diseño moderno y responsivo 🎨</li>
-      <li>Animaciones suaves y atractivas ✨</li>
-      <li>Botones interactivos (sin funcionalidad)</li>
-      <li>Estructura organizada y fácil de navegar 🧭</li>
+      <li><strong>Ransomware-2026:</strong> nueva variante en la wild estalló esta semana.</li>
+      <li><strong>Phishing masivo:</strong> campañas dirigidas a usuarios corporativos en México.</li>
+      <li><strong>Vulnerabilidad zero-day:</strong> exploit disponible para servidor XYZ.</li>
     </ul>
   </section>
 
-  <section id="contact" class="info-section">
-    <h2>Contacto</h2>
-    <p>¿Tienes preguntas? ¡Estamos aquí para ayudarte!</p>
-    <button class="cta-button">Enviar mensaje</button>
-  </section>
-
   <footer>
-    <p>&copy; 2026 Mi Sitio Brillante. Todos los derechos reservados.</p>
+    <p>&copy; 2026 CyberSecure. Todos los derechos reservados.</p>
   </footer>
 </body>
 

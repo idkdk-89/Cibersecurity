@@ -19,3 +19,45 @@ main > h1 {
   text-align: center;
   font-size: 3.5em;
 }
+
+/* new styles for the enhanced structure */
+.container {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.title {
+  color: #333;
+  font-size: 3.5em;
+  margin-bottom: 0.5em;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1.25em;
+  margin-bottom: 1.5em;
+}
+
+.dummy-button {
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dummy-button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
